@@ -105,7 +105,7 @@
                             <td class="px-6 py-4 text-sm">#001</td>
                             <td class="px-6 py-4 text-sm">Juan Dela Cruz</td>
                             <td class="px-6 py-4 text-sm">Brownie</td>
-                            <td class="px-6 py-4 text-sm">Barangay 1, Bacolod</td>
+                            <td class="px-6 py-4 text-sm">Barangay 1, Tacloban</td>
                             <td class="px-6 py-4 text-sm">Oct 15, 2025</td>
                             <td class="px-6 py-4">
                                 <span class="px-3 py-1 text-xs rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500">
@@ -122,7 +122,7 @@
                             <td class="px-6 py-4 text-sm">#002</td>
                             <td class="px-6 py-4 text-sm">Maria Santos</td>
                             <td class="px-6 py-4 text-sm">Max</td>
-                            <td class="px-6 py-4 text-sm">Barangay 5, Bacolod</td>
+                            <td class="px-6 py-4 text-sm">Barangay 5, Tacloban</td>
                             <td class="px-6 py-4 text-sm">Oct 14, 2025</td>
                             <td class="px-6 py-4">
                                 <span class="px-3 py-1 text-xs rounded-full bg-green-500/20 text-green-400 border border-green-500">
@@ -139,7 +139,7 @@
                             <td class="px-6 py-4 text-sm">#003</td>
                             <td class="px-6 py-4 text-sm">Pedro Garcia</td>
                             <td class="px-6 py-4 text-sm">Rocky</td>
-                            <td class="px-6 py-4 text-sm">Barangay 8, Bacolod</td>
+                            <td class="px-6 py-4 text-sm">Barangay 8, Tacloban</td>
                             <td class="px-6 py-4 text-sm">Oct 12, 2025</td>
                             <td class="px-6 py-4">
                                 <span class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-blue-400 border border-blue-500">
@@ -150,13 +150,6 @@
                                 <button class="text-orange-400 hover:text-orange-300 transition">View</button>
                             </td>
                         </tr>
-
-                        <!-- Empty state (you can toggle this based on data) -->
-                        <!-- <tr>
-                            <td colspan="7" class="px-6 py-12 text-center text-gray-500">
-                                No reports found. All reports will appear here.
-                            </td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -189,3 +182,15 @@
 
 </body>
 </html>
+```
+
+**Your file structure should be:**
+```
+resources/
+  └── views/
+      ├── dashboard.blade.php
+      ├── profile.blade.php
+      ├── reports.blade.php     ← CREATE THIS FILE
+      ├── settings.blade.php
+      ├── login.blade.php
+      └── register.blade.php
