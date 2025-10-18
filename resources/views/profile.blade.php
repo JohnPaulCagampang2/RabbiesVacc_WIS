@@ -208,8 +208,8 @@
       <nav class="hidden md:flex items-center space-x-6">
         <a href="{{ route('dashboard') }}" class="text-gray-300 hover:text-orange-400 transition">Dashboard</a>
         <a href="{{ route('profile') }}" class="text-orange-400 transition">Profile</a>
-        <a href="#" class="text-gray-300 hover:text-orange-400 transition">Reports</a>
-        <a href="#" class="text-gray-300 hover:text-orange-400 transition">Settings</a>
+        <a href="{{route('reports')}}" class="text-gray-300 hover:text-orange-400 transition">Reports</a>
+        <a href="{{route('settings')}}" class="text-gray-300 hover:text-orange-400 transition">Settings</a>
       </nav>
 
       <!-- User Section -->
