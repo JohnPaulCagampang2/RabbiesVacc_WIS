@@ -2,59 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Display the authenticated user's profile
      */
-    public function edit(Request $request): View
+    public function index()
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        // Get the currently logged-in user
+        $user = Auth::user();
+        
+        // Return profile view with user data
+        return view('profile', compact('user'));
     }
 
     /**
-     * Update the user's profile information.
+     * Update the user's profile
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request)
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+        $user = Auth::user();
+        
+        // Validate incoming data
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'role' => 'nullable|string',
+            'experience_level' => 'nullable|string',
+            'favorite_artists' => 'nullable|string',
+            'favorite_genre' => 'nullable|string',
+            'equipment' => 'nullable|string',
+            'music_mood' => 'nullable|string',
+            'location' => 'nullable|string',
+            'available_for_collaboration' => 'boolean',
+            'tags' => 'nullable|string',
         ]);
-
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        
+        // Update user profile
+        $user->update($validated);
+        
+        return redirect()->route('profile')->with('success', 'Profile updated successfully!');
     }
 }
