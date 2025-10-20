@@ -61,12 +61,12 @@
     <!-- Stats / Cards Section -->
     <section class="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center shadow-md hover:shadow-orange-400/20 hover:scale-105 transition">
-            <img src="/images/dog1.jpg" alt="Registered Dogs" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover border-2 border-orange-500">
+            <img src="/images/register_3D.jpg" alt="Registered Dogs" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover border-2 border-orange-500">
             <h3 class="text-xl font-semibold text-orange-400">Registered Dogs</h3>
             <p class="text-2xl font-bold mt-2 text-white">245</p>
         </div>
         <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center shadow-md hover:shadow-orange-400/20 hover:scale-105 transition">
-            <img src="/images/dog2.jpg" alt="Vaccinated" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover border-2 border-orange-500">
+            <img src="/images/Vaccinates.jpg" alt="Vaccinated" class="w-16 h-16 mx-auto mb-3 rounded-full object-cover border-2 border-orange-500">
             <h3 class="text-xl font-semibold text-orange-400">Vaccinated</h3>
             <p class="text-2xl font-bold mt-2 text-white">198</p>
         </div>
